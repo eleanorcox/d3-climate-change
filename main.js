@@ -15,7 +15,7 @@ d3.select("#legend li:nth-child("+ i +")").classed("highlightText",toggle);
 };
 
 let divSelection = d3.select("#viz")
-.selectAll("div");
+        .selectAll("div");
 
 divSelection.data(climate_daly_data)
         .enter()
@@ -25,26 +25,26 @@ divSelection.data(climate_daly_data)
           return d.deaths * 8 + "px";
         })
         .on("mouseover", (d, i) => {
-          toggleClass(i + 1, true)
+          toggleClass(i + 1, true);
         })
         .on("mouseout", (d, i) => {
-          toggleClass(i + 1, false)
+          toggleClass(i + 1, false);
         });
 
 let listSelection = d3.select("#legend")
-.selectAll("li");
+        .selectAll("li");
 
-divSelection.data(climate_daly_data)
+listSelection.data(climate_daly_data)
         .enter()
         .append("li")
         .text((d) => {
           return d.region + ": " + d.deaths + " deaths"
         })
         .on("mouseover", (d, i) => {
-          toggleClass(i + 1, true)
+          toggleClass(i + 1, true);
         })
         .on("mouseout", (d, i) => {
-          toggleClass(i + 1, false)
+          toggleClass(i + 1, false);
         });
 
 
